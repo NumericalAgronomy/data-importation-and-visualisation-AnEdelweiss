@@ -17,7 +17,7 @@ from src.transformers import (
 DATA_PATH = project_root / "data"
 
 # Read data for 3 classes dataset
-mat_3cl = pd.read_csv(DATA_PATH  / "spectra_3cl.csv", sep=";", index_col=0)
+mat_3cl = pd.read_csv(DATA_PATH  / "/home/edelweiss/Documents/UE3/data-importation-and-visualisation-AnEdelweiss/data/combined_data.csv", sep=";", index_col=0)
 simple_classes_3cl = pd.read_csv(
     DATA_PATH  / "classes_3cl.csv", sep=";", index_col=0
 )
