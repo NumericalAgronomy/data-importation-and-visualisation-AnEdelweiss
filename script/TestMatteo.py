@@ -30,17 +30,16 @@ print(df.isnull().sum())
 # -------------------------------
 # On suppose que la colonne d'espèce s'appelle 'species'. 
 # Si ce n'est pas le cas, modifiez la variable ci-dessous.
-species_col = 'species'
+species_col = 'class'
 if species_col not in df.columns:
     print(f"La colonne '{species_col}' n'a pas été trouvée. " \
           "Veuillez modifier le nom de la colonne correspondant aux espèces.")
     species_col = df.columns[-1]  # On suppose ici que c'est la dernière colonne
 
-# Les colonnes spectrales sont toutes les colonnes sauf celle de l'espèce
+# Les colonnes spectrales ont toutes les colonnes sauf celle de l'espèce
 spectral_columns = [col for col in df.columns if col != species_col]
 print("\nColonnes spectrales détectées :")
 print(spectral_columns)
-
 # -------------------------------
 # 3. Analyse exploratoire
 # -------------------------------
