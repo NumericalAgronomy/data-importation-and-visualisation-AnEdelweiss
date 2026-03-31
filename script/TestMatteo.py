@@ -11,7 +11,7 @@ from sklearn.decomposition import PCA
 # 1. Chargement et aperçu du dataset
 # -------------------------------
 # Remplacer le chemin si nécessaire
-data_path = '/home/edelweiss/Documents/UE3/data-importation-and-visualisation-AnEdelweiss/data/combined_data.csv'
+data_path = 'data/combined_data.csv'
 df = pd.read_csv(data_path)
 
 print("Aperçu du dataset :")
