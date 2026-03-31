@@ -6,12 +6,16 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.signal import savgol_filter
 from sklearn.decomposition import PCA
-
+from transformers import (
+    SNVTransformer,
+    SavitzkyGolayTransformer,
+    DerivativeTransformer,
+)
 # -------------------------------
 # 1. Chargement et aperçu du dataset
 # -------------------------------
 # Remplacer le chemin si nécessaire
-data_path = 'data/combined_data.csv'
+data_path = 'data-importation-and-visualisation-AnEdelweiss/data/combined_data.csv'
 df = pd.read_csv(data_path)
 
 print("Aperçu du dataset :")
@@ -42,7 +46,13 @@ print("\nColonnes spectrales détectées :")
 print(spectral_columns)
 # -------------------------------
 # 3. Analyse exploratoire
+#initialisation des transformations :
+snv_transformer = SNVTransformer()
+sg_smoother = SavitzkyGolayTransformer(window_length=11, polyorder=3)
+derivative1 = DerivativeTransformer(order=1, window_length=15, polyorder=3)
+derivative2 = DerivativeTransformer(order=2, window_length=21, polyorder=3)
 # -------------------------------
+
 
 # 3.1 Distribution des espèces
 species_counts = df[species_col].value_counts()
